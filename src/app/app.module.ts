@@ -13,6 +13,7 @@ import { MapComponent } from './map/map.component';
 import { MergemapComponent } from './mergemap/mergemap.component';
 import { ConcatmapComponent } from './concatmap/concatmap.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CustomeobservableComponent,
     MapComponent,
     MergemapComponent,
-    ConcatmapComponent
+    ConcatmapComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
