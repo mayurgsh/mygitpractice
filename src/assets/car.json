@@ -1,0 +1,4 @@
+{
+    "mayur":{ "make": "Toyota", "model": "Celica", "price": 35000 },
+    "vishal":{ "make": "Ford", "model": "Mondeo", "price": 32000 }
+}

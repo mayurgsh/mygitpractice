@@ -32,4 +32,7 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('.content span')?.textContent).toContain('equet app is running!');
   });
+  it('test Success',()=>{
+    expect(true).toBe(true)
+  })
 });

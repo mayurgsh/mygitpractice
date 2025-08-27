@@ -3,14 +3,34 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AgGridModule } from 'ag-grid-angular';
+import { FromEventComponent } from './from-event/from-event.component';
+import { TimerintervalComponent } from './timerinterval/timerinterval.component';
+import { OfFromComponent } from './of-from/of-from.component';
+import { CustomeobservableComponent } from './customeobservable/customeobservable.component';
+import { MapComponent } from './map/map.component';
+import { MergemapComponent } from './mergemap/mergemap.component';
+import { ConcatmapComponent } from './concatmap/concatmap.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FromEventComponent,
+    TimerintervalComponent,
+    OfFromComponent,
+    CustomeobservableComponent,
+    MapComponent,
+    MergemapComponent,
+    ConcatmapComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    AgGridModule,
+  FormsModule,
+  ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

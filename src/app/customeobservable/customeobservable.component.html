@@ -1,0 +1,30 @@
+<!-- <p>customeobservable works!</p> -->
+<div class="row">
+    <div class="col-md-6">
+        <strong>Ex 01 -Manual</strong>
+        <ul class="techList" [ngClass]="techStatus =='error' ?'error': techStatus == 'completed'?'completed':'' " id="elContainer">
+            
+        </ul>
+    </div>
+
+    <div class="col-md-6">
+        <strong>Ex 02 -(Custome interval observable)</strong>
+        <ul class="techList" id="elcontainer2">
+            
+        </ul>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-12">
+        <p class="bg-light py-2 px-3 border rounded">
+            <strong>Random Names :</strong>
+            'mayur','gajanan' ,'shinde','gaurav','kurhekar'
+        </p>
+        <hr>
+        <p>Current Name : <strong class="text-success">mayur</strong></p><br>
+        <!-- <h1><span class="badge badge-secondary">New</span></h1> -->
+       <span>Success</span>
+    </div>
+    <!-- <span class="badge badge-success">Success</span> -->
+</div>
