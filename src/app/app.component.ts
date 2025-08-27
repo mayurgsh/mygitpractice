@@ -48,8 +48,5 @@ export class AppComponent implements OnInit {
       this.nextStep();
     }
   }
-  name(){
-    return "hello mayur shinde"
-  }
-}
+ }
 
