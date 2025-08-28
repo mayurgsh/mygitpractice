@@ -1,93 +1,19 @@
-<!-- Stepper Functionality -->
-<div class="container mt-5">
-    <div class="d-flex justify-content-center mb-4">
-        <div class="stepper">
-            <span [class.active]="step === 1">
-                Step 1
-                <span *ngIf="step > 1" class="text-success ms-2">&#10003;</span>
-            </span>
-            <span [class.active]="step === 2">
-                Step 2
-                <span *ngIf="step > 2" class="text-success ms-2">&#10003;</span>
-            </span>
-            <span [class.active]="step === 3">
-                Step 3
-                <span *ngIf="step > 3" class="text-success ms-2">&#10003;</span>
-            </span>
-        </div>
-    </div>
+<h1>hello</h1>
 
-    <div *ngIf="step === 1">
-        <h4>Login Form</h4>
-        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" id="username" class="form-control" formControlName="username">
-                <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched"
-                    class="text-danger">Username is required</div>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" id="password" class="form-control" formControlName="password">
-                <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
-                    class="text-danger">Password is required</div>
-            </div>
-            <button type="submit" class="btn btn-primary">Next</button>
-        </form>
-    </div>
-
-    <div *ngIf="step === 2">
-        <h4>Contact Form</h4>
-        <form [formGroup]="contactForm" (ngSubmit)="submitContact()">
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" class="form-control" formControlName="email">
-                <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger">
-                    Valid email is required</div>
-            </div>
-            <div class="mb-3">
-                <label for="phone" class="form-label">Phone</label>
-                <input type="text" id="phone" class="form-control" formControlName="phone">
-                <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched" class="text-danger">
-                    Phone is required</div>
-            </div>
-            <button type="button" class="btn btn-secondary me-2" (click)="prevStep()">Back</button>
-            <button type="submit" class="btn btn-primary">Next</button>
-        </form>
-    </div>
-
-    <div *ngIf="step === 3">
-        <h4>Review & Finish</h4>
-        <div class="mb-3">
-            <strong>Username:</strong> {{ loginForm.value.username }}<br>
-            <strong>Email:</strong> {{ contactForm.value.email }}<br>
-            <strong>Phone:</strong> {{ contactForm.value.phone }}
-        </div>
-        <button type="button" class="btn btn-secondary me-2" (click)="prevStep()">Back</button>
-        <button type="button" class="btn btn-success">Finish</button>
-    </div>
+<input
+	type="text"
+	[value]="searchText"
+	(input)="onSearchChange($event)"
+	placeholder="Search employee by name"
+	pattern="^[^\s-]*$"
+	title="No spaces or negative characters allowed"
+/>
+<div *ngIf="invalidSearch" style="color:red;">
+	Spaces and negative characters are not allowed.
 </div>
 
-<style>
-    .stepper span {
-        display: inline-block;
-        width: 100px;
-        padding: 10px;
-        margin: 0 10px;
-        border-radius: 20px;
-        background: #e9ecef;
-        color: #333;
-        font-weight: 500;
-        text-align: center;
-        transition: background 0.3s, color 0.3s;
-    }
-
-    .stepper span.active {
-        background: #007bff;
-        color: #fff;
-    }
-</style>
-
-
-<hr>
-<app-login></app-login>
+<ul>
+	<li *ngFor="let emp of filteredResults">
+		{{ emp.name }}
+	</li>
+</ul>
